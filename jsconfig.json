@@ -15,5 +15,5 @@
   ],
   "include": [
       "src/*.js"
-  ]
+, "src/App.jsx", "src/App.jsx"  ]
 }
