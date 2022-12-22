@@ -1,15 +1,9 @@
 import React, { memo } from 'react';
-import routes from '@/router/index';
-import { useRoutes } from 'react-router-dom';
+
+import Index from './views/index';
 
 const App = memo(() => {
-  return (
-    <div className="app">
-      <div>header</div>
-      <div className="content">{useRoutes(routes)}</div>
-      <div>footer</div>
-    </div>
-  );
+  return <Index />;
 });
 
 export default App;

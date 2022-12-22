@@ -1,25 +1,25 @@
 import React from 'react';
 
-const home = React.lazy(() => import('@/views/home'));
-const about = React.lazy(() => import('@/views/about'));
-const more = React.lazy(() => import('@/views/more'));
+const Home = React.lazy(() => import('@/views/home'));
+const About = React.lazy(() => import('@/views/about'));
+const More = React.lazy(() => import('@/views/more'));
 
 const routes = [
   {
     path: '/',
-    element: <home />,
+    element: <Home />,
   },
   {
     path: '/home',
-    element: <home />,
+    element: <Home />,
   },
   {
     path: '/about',
-    element: <about />,
+    element: <About />,
   },
   {
     path: '/more',
-    element: <more />,
+    element: <More />,
   },
 ];
 
