@@ -3,11 +3,12 @@ import { Rating } from '@mui/material';
 import { RoomItemWrapper } from './style';
 
 const RoomItem = memo((props) => {
-  const { itemData } = props;
+  const { itemData, width } = props;
 
   return (
     <RoomItemWrapper
       verifyColor={itemData?.verify_info?.text_color || '#39576a'}
+      width={width}
     >
       <div className="inner">
         <div className="cover">

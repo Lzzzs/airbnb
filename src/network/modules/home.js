@@ -7,3 +7,7 @@ export function getHomeGoodPriceInfo() {
 export function getHomeHighScoreInfo() {
   return instance.get('home/highscore');
 }
+
+export function getHomeDiscountInfo() {
+  return instance.get('home/discount');
+}
