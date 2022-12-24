@@ -4,7 +4,7 @@ import { SectionTabsWrapper } from './style';
 
 const SectionTabs = memo((props) => {
   const { tabs, changeCity } = props;
-  const [currentTab, setTab] = useState(tabs[0] ?? '佛山');
+  const [currentTab, setTab] = useState(tabs[0]);
 
   const tabClassName = (tab) => (tab === currentTab ? 'tab active' : 'tab');
   return (

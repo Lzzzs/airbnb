@@ -9,7 +9,8 @@ import SectionTabs from 'components/section-tabs';
 const SectionV2 = memo((props) => {
   const { sectionData } = props;
 
-  const [city, setCity] = useState('佛山');
+  const tabs = Object.keys(sectionData.dest_list);
+  const [city, setCity] = useState(tabs[0]);
   const changeTabHandle = useCallback(function (tab) {
     setCity(tab);
   }, []);
@@ -20,10 +21,7 @@ const SectionV2 = memo((props) => {
         title={sectionData.title}
         subtitle={sectionData.subtitle}
       ></SectionHeader>
-      <SectionTabs
-        tabs={sectionData.dest_list ? Object.keys(sectionData.dest_list) : []}
-        changeCity={changeTabHandle}
-      ></SectionTabs>
+      <SectionTabs tabs={tabs} changeCity={changeTabHandle}></SectionTabs>
       <RoomList roomList={sectionData?.dest_list?.[city]}></RoomList>
     </SectionV2Wrapper>
   );

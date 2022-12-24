@@ -7,6 +7,7 @@ import SectionV1 from './c-cpns/section-v1';
 import { HomeWrapper } from './style';
 
 import SectionV2 from './c-cpns/section-v2';
+import { isEmptyObject } from '../../utils';
 
 const Home = memo(() => {
   const dispatch = useDispatch();
@@ -28,10 +29,15 @@ const Home = memo(() => {
     <HomeWrapper>
       <Banner />
       <div className="content">
-        <SectionV2 sectionData={homeDiscountInfo} />
-
-        <SectionV1 sectionData={homeGoodPriceInfo} />
-        <SectionV1 sectionData={homeHighScoreInfo} />
+        {isEmptyObject(homeDiscountInfo) && (
+          <SectionV2 sectionData={homeDiscountInfo} />
+        )}
+        {isEmptyObject(homeGoodPriceInfo) && (
+          <SectionV1 sectionData={homeGoodPriceInfo} />
+        )}
+        {isEmptyObject(homeHighScoreInfo) && (
+          <SectionV1 sectionData={homeHighScoreInfo} />
+        )}
       </div>
     </HomeWrapper>
   );
