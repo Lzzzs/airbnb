@@ -3,6 +3,7 @@ import {
   getHomeGoodPriceInfo,
   getHomeHighScoreInfo,
   getHomeDiscountInfo,
+  getHomeHotreCommendInfo,
 } from '@/network';
 
 export const fetchHomeInfo = createAsyncThunk(
@@ -17,6 +18,9 @@ export const fetchHomeInfo = createAsyncThunk(
     getHomeDiscountInfo().then((res) => {
       dispatch(changeDiscountInfo(res));
     });
+    getHomeHotreCommendInfo().then((res) => {
+      dispatch(changeHotreCommendInfo(res));
+    });
   }
 );
 
@@ -26,6 +30,7 @@ const homeSlice = createSlice({
     goodPriceInfo: {},
     highScoreInfo: {},
     discountInfo: {},
+    hotreCommendInfo: {},
   },
   reducers: {
     changeGoodPriceInfo(state, { payload }) {
@@ -37,14 +42,16 @@ const homeSlice = createSlice({
     changeDiscountInfo(state, { payload }) {
       state.discountInfo = payload;
     },
-  },
-  extraReducers: {
-    // [fetchHomeGoodPriceInfo.fulfilled](state, { payload }) {
-    //   state.goodPriceInfo = payload;
-    // },
+    changeHotreCommendInfo(state, { payload }) {
+      state.hotreCommendInfo = payload;
+    },
   },
 });
 
-export const { changeGoodPriceInfo, changeHighScoreInfo, changeDiscountInfo } =
-  homeSlice.actions;
+export const {
+  changeGoodPriceInfo,
+  changeHighScoreInfo,
+  changeDiscountInfo,
+  changeHotreCommendInfo,
+} = homeSlice.actions;
 export default homeSlice.reducer;

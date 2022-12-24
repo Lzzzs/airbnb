@@ -15,15 +15,20 @@ const Home = memo(() => {
     dispatch(fetchHomeInfo());
   }, [dispatch]);
 
-  const { homeGoodPriceInfo, homeHighScoreInfo, homeDiscountInfo } =
-    useSelector(
-      (state) => ({
-        homeGoodPriceInfo: state.home.goodPriceInfo,
-        homeHighScoreInfo: state.home.highScoreInfo,
-        homeDiscountInfo: state.home.discountInfo,
-      }),
-      shallowEqual
-    );
+  const {
+    homeGoodPriceInfo,
+    homeHighScoreInfo,
+    homeDiscountInfo,
+    homeHotreCommendInfo,
+  } = useSelector(
+    (state) => ({
+      homeGoodPriceInfo: state.home.goodPriceInfo,
+      homeHighScoreInfo: state.home.highScoreInfo,
+      homeDiscountInfo: state.home.discountInfo,
+      homeHotreCommendInfo: state.home.hotreCommendInfo,
+    }),
+    shallowEqual
+  );
 
   return (
     <HomeWrapper>
@@ -31,6 +36,9 @@ const Home = memo(() => {
       <div className="content">
         {isEmptyObject(homeDiscountInfo) && (
           <SectionV2 sectionData={homeDiscountInfo} />
+        )}
+        {isEmptyObject(homeHotreCommendInfo) && (
+          <SectionV2 sectionData={homeHotreCommendInfo} />
         )}
         {isEmptyObject(homeGoodPriceInfo) && (
           <SectionV1 sectionData={homeGoodPriceInfo} />

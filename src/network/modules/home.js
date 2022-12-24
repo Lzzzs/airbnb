@@ -11,3 +11,7 @@ export function getHomeHighScoreInfo() {
 export function getHomeDiscountInfo() {
   return instance.get('home/discount');
 }
+
+export function getHomeHotreCommendInfo() {
+  return instance.get('home/hotrecommenddest');
+}
