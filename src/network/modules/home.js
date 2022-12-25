@@ -15,3 +15,11 @@ export function getHomeDiscountInfo() {
 export function getHomeHotreCommendInfo() {
   return instance.get('home/hotrecommenddest');
 }
+
+export function getHomeLongForInfo() {
+  return instance.get('home/longfor');
+}
+
+export function getHomePlusInfo() {
+  return instance.get('home/plus');
+}

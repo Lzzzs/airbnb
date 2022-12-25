@@ -22,7 +22,10 @@ const SectionV2 = memo((props) => {
         subtitle={sectionData.subtitle}
       ></SectionHeader>
       <SectionTabs tabs={tabs} changeCity={changeTabHandle}></SectionTabs>
-      <RoomList roomList={sectionData?.dest_list?.[city]}></RoomList>
+      <RoomList
+        roomList={sectionData?.dest_list?.[city]}
+        itemWidth="33.33%"
+      ></RoomList>
     </SectionV2Wrapper>
   );
 });
