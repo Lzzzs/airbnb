@@ -1,9 +1,15 @@
 import React, { memo } from 'react';
 import { Rating } from '@mui/material';
 import { RoomItemWrapper } from './style';
+import { useNavigate } from 'react-router-dom';
 
 const RoomItem = memo((props) => {
   const { itemData, width } = props;
+
+  const navigation = useNavigate();
+  function handleToMore() {
+    navigation('/more');
+  }
 
   return (
     <RoomItemWrapper
@@ -11,7 +17,7 @@ const RoomItem = memo((props) => {
       width={width}
     >
       <div className="inner">
-        <div className="cover">
+        <div className="cover" onClick={handleToMore}>
           <img src={itemData.picture_url} alt="" />
         </div>
         <div className="desc">{itemData.verify_info.messages.join(' · ')}</div>

@@ -5,6 +5,7 @@ export const RoomItemWrapper = styled.div`
   width: ${(props) => props.width};
   padding: 8px;
   flex-shrink: 0;
+  user-select: none;
 
   .inner {
     width: 100%;
@@ -16,6 +17,7 @@ export const RoomItemWrapper = styled.div`
     padding: 66.66% 8px 0;
     border-radius: 3px;
     overflow: hidden;
+    cursor: pointer;
 
     img {
       position: absolute;
